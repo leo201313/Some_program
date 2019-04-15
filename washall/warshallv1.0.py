@@ -8,6 +8,7 @@ import numpy as np
 import time
 M = np.genfromtxt('ranmat.txt',dtype=int,delimiter=' ')
 n = M.shape[0]
+# For initial test
 # n=4
 # M=np.zeros((n,n),int)
 # M[0,1] = 1
@@ -35,23 +36,18 @@ for col in range(n):
     else:
         if A[col,:].sum() == n:
             A[bool_col_1,:] = 1
+        # Skip the row that have all 1
         else:
             to_change = st_row
             for ele in range(num_1-1):
                 to_change = np.concatenate((to_change,st_row),axis=0)
-                A[bool_col_1,:] = to_change | A[bool_col_1,:]
+            A[bool_col_1,:] = to_change | A[bool_col_1,:]
 end = time.time()
 print('The t(R) is like:\n')
 print(A)
 print('\nThe total time is:')
 print(end-start)
 
-            
-        
-#     print(bool_col_1)
-#     print(A[bool_col_1,:])
-#     print(A[bool_col_1,:].shape)
-#     A[bool_col_1,:] = A[bool_col_1,:] |  
 
 
 
