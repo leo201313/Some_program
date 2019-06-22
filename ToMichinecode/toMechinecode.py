@@ -3,12 +3,12 @@ import pandas as pd
 
 sentences = pd.read_csv('sourcecode.csv',sep='\n',header=None)
 print(sentences)
-R_type = {'mult':'000000','add':'000000'}
+R_type = {'mult':'000000','add':'000000','slt':'000000'}
 LS_type = {'lw':'100011','sw':'101011'}
 I_type = {'addi':'001000','beq':'000100'}
-typee = {'mult':R_type,'add':R_type,'lw':LS_type,'sw':LS_type,'addi':I_type,'beq':I_type}
+typee = {'mult':R_type,'add':R_type,'slt':R_type,'lw':LS_type,'sw':LS_type,'addi':I_type,'beq':I_type}
 
-funct_code = {'mult':'011000','add':'100000'}
+funct_code = {'mult':'011000','add':'100000','slt':101010}
 sentences.rename(columns={0:'Source'},inplace=True)
 sentences['INS'] = sentences['Source'].str.split(' ').str.get(0)
 sentences['VAL'] = sentences['Source'].str.split(' ').str.get(1)
