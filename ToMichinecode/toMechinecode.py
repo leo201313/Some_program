@@ -118,4 +118,5 @@ def tocode(row):
     return totcode
 
 sentences['bitcode'] = sentences.apply(tocode,axis=1)
+sentences['bitcode'].to_csv('Bitcode.csv',sep='\n',index=False)
 print(sentences['bitcode'])
