@@ -102,7 +102,7 @@ def tocode(row):
             temp = VAL.split(sep=',')
             rs = fillbit(format(val_code[temp[2]],'b'),5)
             rt = fillbit(format(val_code[temp[0]],'b'),5)
-            imm = fillbit(format(int(temp[1])),16)
+            imm = fillbit(format(int(temp[1]),'b'),16)
             totcode = op + rs + rt + imm
 
         elif typee[INS] == I_type:
